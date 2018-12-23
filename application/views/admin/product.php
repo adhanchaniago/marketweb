@@ -23,6 +23,15 @@
         </div>
 
         <div class="form-group">
+          <label for="price" class="col-form-label">katagori</label>
+          <select value="" name="katagori" class="form-control" required>
+            <option value="website">Website</option>
+            <option value="google seo">google seo</option>
+            <option value="sosial ads">sosial ads</option>
+          </select>
+        </div>
+
+        <div class="form-group">
           <label for="isi" class="col-form-label">Deskripsi Product</label><br>
           <textarea id="editor1" name="deskripsi" rows="10" cols="80" required>
             

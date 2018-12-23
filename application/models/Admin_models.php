@@ -126,20 +126,22 @@
 			$this->db->update('product_h', $data);
 		}
 
-		public function add_product($deskripsi, $title, $price)
+		public function add_product($deskripsi, $title, $price, $katagori)
 		{
 			$data = array('deskripsi'	=> $deskripsi ,
 						  'title'		=> $title,
-						  'price'		=> $price
+						  'price'		=> $price,
+						  'katagori' 	=> $katagori
 						   );
 			$this->db->insert('product', $data);
 		}
 
-		public function edit_product_p($deskripsi, $title, $price,  $id)
+		public function edit_product_p($deskripsi, $title, $price, $katagori, $id)
 		{
 			$data = array('deskripsi'	=> $deskripsi ,
 						  'title'		=> $title,
-						  'price'		=> $price
+						  'price'		=> $price,
+						  'katagori' 	=> $katagori
 						   );
 			$this->db->where('id', $id);
 			$this->db->update('product', $data);
@@ -546,6 +548,32 @@
 			$this->db->from('orderan');
 			$this->db->where('member',$username);
 			return $this->db->get();
+		}
+
+		public function get_product_website($website)
+		{
+			$this->db->select('*');
+			$this->db->where('katagori', $website);
+			$this->db->from('product');
+			return $this->db->get();
+		}
+
+		public function get_product_google($google)
+		{
+			$this->db->select('*');
+			$this->db->where('katagori', $google);
+			$this->db->from('product');
+			return $this->db->get();
+		}
+
+		public function get_product_sosial($sosial)
+		
+		{
+			$this->db->select('*');
+			$this->db->where('katagori', $sosial);
+			$this->db->from('product');
+			return $this->db->get();
+
 		}
 
 

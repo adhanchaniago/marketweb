@@ -868,7 +868,8 @@ class Admin extends CI_Controller
 				$deskripsi  = $this->input->post('deskripsi');
 				$title		= $this->input->post('title');
 				$price 		= $this->input->post('price');
-				$this->admin_models->add_product($deskripsi, $title, $price);
+				$katagori 	= $this->input->post('katagori');
+				$this->admin_models->add_product($deskripsi, $title, $price, $katagori);
 				$this->session->set_flashdata('info', 'data berhasil di Update!');				
 				redirect('admin/product');
 			}
@@ -898,8 +899,9 @@ class Admin extends CI_Controller
 				$title		= $this->input->post('title');
 				$price 		= $this->input->post('price');
 				$id 		= $this->input->post('id');
+				$katagori 	= $this->input->post('katagori');
 				
-				$this->admin_models->edit_product_p($deskripsi, $title, $price, $id);
+				$this->admin_models->edit_product_p($deskripsi, $title, $price, $katagori, $id);
 				$this->session->set_flashdata('info', 'data berhasil di Update!');				
 				redirect('admin/product');
 			}

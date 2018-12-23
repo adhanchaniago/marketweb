@@ -174,6 +174,7 @@ class Home extends CI_Controller
 				$data['counter']			= $this->pengunjung->get_pengunjung();
 				$id2 						= 1;
 				$id 						= 1;
+				$website 					= 'website';
 				$data['info']				= $this->db->get_where('info', array('id' => $id2))->row();
 				$data['seo']				= $this->db->get_where('article', array('id' => $id))->row();
 				$data['heading2']			= $this->db->get_where('heading', array('id' => $id2))->row();
@@ -185,7 +186,7 @@ class Home extends CI_Controller
 				$data['heading'] 			= 'article/heading';
 				$data['nav']		 		= 'jasa-website';
 				$data['product_h']			= $this->db->get_where('product_h', array('id' => $id))->row();
-				$data['table']				= $this->admin_models->get_product()->result();
+				$data['table']				= $this->admin_models->get_product_website($website)->result();
 				$data['product'] 			= 'home_navigasi/product';
 
 				$this->load->view('jasa_website', $data);
@@ -193,12 +194,48 @@ class Home extends CI_Controller
 
 			public function google_ads()
 			{
+				$data['counter']			= $this->pengunjung->get_pengunjung();
+				$id2 						= 1;
+				$id 						= 2;
+				$google 					= 'google seo';
+				$data['info']				= $this->db->get_where('info', array('id' => $id2))->row();
+				$data['seo']				= $this->db->get_where('article', array('id' => $id))->row();
+				$data['heading2']			= $this->db->get_where('heading', array('id' => $id2))->row();
+				$data['script_top']    		= 'home_navigasi/script_top';
+				$data['script_top']    		= 'home_navigasi/script_top';
+				$data['script_bottom']  	= 'home_navigasi/script_bottom';
+				$data['header'] 			= 'home_navigasi/header';
+				$data['footer'] 			= 'home_navigasi/footer';
+				$data['heading'] 			= 'article/heading';
+				$data['nav']		 		= 'jasa-google-ads';
+				$data['product_h']			= $this->db->get_where('product_h', array('id' => $id2))->row();
+				$data['table']				= $this->admin_models->get_product_google($google)->result();
+				$data['product'] 			= 'home_navigasi/product';
 
+				$this->load->view('jasa_website', $data);
 			}
 
 			public function sosial_media_ads()
 			{
+				$data['counter']			= $this->pengunjung->get_pengunjung();
+				$id2 						= 1;
+				$id 						= 3;
+				$sosial 					= 'sosial ads';
+				$data['info']				= $this->db->get_where('info', array('id' => $id2))->row();
+				$data['seo']				= $this->db->get_where('article', array('id' => $id))->row();
+				$data['heading2']			= $this->db->get_where('heading', array('id' => $id2))->row();
+				$data['script_top']    		= 'home_navigasi/script_top';
+				$data['script_top']    		= 'home_navigasi/script_top';
+				$data['script_bottom']  	= 'home_navigasi/script_bottom';
+				$data['header'] 			= 'home_navigasi/header';
+				$data['footer'] 			= 'home_navigasi/footer';
+				$data['heading'] 			= 'article/heading';
+				$data['nav']		 		= 'jasa-sosial-media-ads';
+				$data['product_h']			= $this->db->get_where('product_h', array('id' => $id2))->row();
+				$data['table']				= $this->admin_models->get_product_sosial($sosial)->result();
+				$data['product'] 			= 'home_navigasi/product';
 
+				$this->load->view('jasa_website', $data);
 			}
 
 		
